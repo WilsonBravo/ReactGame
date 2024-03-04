@@ -1,0 +1,88 @@
+.modal--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal--content h1 {
+    color: #181818;
+    /* font-size: 46px; */
+    font-size: 46px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.modal--content p {
+    color: #181818;
+    margin:0 40px;
+    margin-bottom: 30px;
+}
+
+.tenzies--dices {
+    align-items: center;
+    place-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px 30px 40px 30px;
+}
+
+.tenzies--die {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 65.84px;
+    width: 65.84px;
+    background-color: #181818;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tenzies--die:hover {
+    transform: rotate(10deg);
+}
+
+.tenzies--roll {
+    cursor: pointer;
+    border-style: none;
+    background-color: rgb(161, 18, 18, 0.7);
+    font-size: 30px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #FFE5CC;
+    transition: all 0.3s;
+}
+
+.tenzies--roll:hover {
+    background-color: rgb(161, 18, 18);
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:480px){
+    .modal--content h1 {
+        font-size: 36px;
+    }
+    
+    .modal--content p {
+        font-size: 14px;
+    }
+
+    .tenzies--dices {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        padding-bottom: 20px;
+    }
+    .tenzies--die {
+        height: 40px;
+        width: 40px;
+        font-size: 25px;
+    }
+}

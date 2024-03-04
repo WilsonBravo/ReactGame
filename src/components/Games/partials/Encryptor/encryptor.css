@@ -1,0 +1,43 @@
+.encryptor--container {
+    /* background-color: #181818; */
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.encryptor--fieldset {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #181818;
+}
+
+.background--dark {
+    background-color: #181818;
+}
+
+.background--ligth {
+    background-color: #FFE5CC;
+}
+
+.background--dark legend {
+    text-align: center;
+    background-color: #FFE5CC;
+    border-radius: 10px;
+    padding: 10px;
+    color: #181818;
+}
+
+.background--ligth legend {
+    text-align: center;
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 10px;
+}

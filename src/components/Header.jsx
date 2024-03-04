@@ -1,4 +1,6 @@
 import React from "react"
+import Link from "next/link";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPython, faRaspberryPi, faLinux } from "@fortawesome/free-brands-svg-icons";
 
@@ -36,8 +38,8 @@ export default function Header (props) {
                     <a href="#">Proyects</a>
                     </div>
                 </div> 
-                <a className="home--header--item" href="#">Game</a>
-                <a className="home--header--item" href="/NotesApp">Notes App</a>
+                <Link className="home--header--item" href="/Games">Games</Link>
+                <Link className="home--header--item" href="/NotesApp">Notes App</Link>
                 <div className="home--darkmode">
                     <span className="bold">Ligth</span>
                     <button className="change--colorbutton" onClick={props.darkModeToggle}>

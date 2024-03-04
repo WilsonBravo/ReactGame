@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import './reset.css'
-import './globals.css'
-import "./page.css";
+import '@/styles/reset.css'
+import '@/styles/globals.css'
+import "@/styles/page.css";
 
 import App from "./App";
 

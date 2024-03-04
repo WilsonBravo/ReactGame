@@ -1,13 +1,13 @@
 'use client'
 import React from "react"
-import Sidebar from "./components/Sidebar"
-import Editor from "./components/Editor"
+import Sidebar from "@/components/NotesApp/Sidebar"
+import Editor from "@/components/NotesApp/Editor"
 import Split from "react-split"
 import {nanoid} from "nanoid"
 import { onSnapshot, addDoc, doc, deleteDoc, setDoc } from "firebase/firestore"
 import { notesCollection, db } from "./firebase"
 
-import "./style.css";
+import "@/styles/NotesApp/style.css";
 
 export default function App() {
     // Use LocalStorage -------------------------------------------------
@@ -115,6 +115,10 @@ export default function App() {
     }
     
     async function updateNote(text) {
+        if (!currentNoteId) {
+            console.error("Error: currentNoteId is not defined.");
+            return;
+        }
         const docRef = doc(db, "notes", currentNoteId)
         await setDoc(docRef, { body: text, updatedAt: Date.now(), }, { merge: true })
     }
