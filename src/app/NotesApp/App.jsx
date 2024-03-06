@@ -2,8 +2,7 @@
 import React from "react"
 import Sidebar from "@/components/NotesApp/Sidebar"
 import Editor from "@/components/NotesApp/Editor"
-import Split from "react-split"
-import {nanoid} from "nanoid"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNoteSticky, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { onSnapshot, addDoc, doc, deleteDoc, setDoc } from "firebase/firestore"
@@ -12,55 +11,6 @@ import { notesCollection, db } from "./firebase"
 import "@/styles/NotesApp/style.css";
 
 export default function App() {
-    // Use LocalStorage -------------------------------------------------
-    // const [notes, setNotes] = React.useState(
-    //     () => JSON.parse(localStorage.getItem('notes')) || []
-    //     )
-    // const [currentNoteId, setCurrentNoteId] = React.useState(
-    //     (notes[0]?.id) || ""
-    // )
-
-    // React.useEffect(()=>{
-    //     localStorage.setItem('notes', JSON.stringify(notes))
-    // }, [notes])
-
-    // function createNewNote() {
-    //     const newNote = {
-    //         id: nanoid(),
-    //         body: "# Type your markdown note's title here"
-    //     }
-    //     setNotes(prevNotes => [newNote, ...prevNotes])
-    //     setCurrentNoteId(newNote.id)
-    // }
-
-    // function updateNote(text) {
-    //     // Put the most recently-modified at the top
-    //     setNotes(oldNotes => {
-    //         const newNotes = []
-
-    //         for (let index = 0; index < oldNotes.length; index++) {
-    //             const oldNote=oldNotes[index]
-
-    //             if (oldNote.id === currentNoteId) {
-    //                 // put the updated note at the 
-    //                 // beginning of the new array
-    //                 newNotes.unshift({...oldNote, body: text})
-    //             } else {
-    //                 newNotes.push(oldNote)
-    //             }
-    //         }
-    //         return newNotes
-    //     })
-    // }
-
-    // function deleteNote(event, noteId) {
-    //     event.stopPropagation()
-    //     setNotes(oldNotes=>{
-    //         const newNotes = oldNotes.filter(note => note.id !== noteId);
-    //         return newNotes
-    //     })
-    // }
-
     const [toggleSideBar, setToggleSideBar] = React.useState(false)
 
     // Use Firebase -------------------------------------------------
@@ -133,7 +83,6 @@ export default function App() {
     }
     
     return (
-        <>
             <main>
             {
                 notes.length > 0 
@@ -179,6 +128,5 @@ export default function App() {
                 
             }
             </main>
-        </>
     )
 }

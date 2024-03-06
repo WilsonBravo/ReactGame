@@ -8,7 +8,7 @@ import Footer from "@/components/Games/Footer"
 
 import data from "@/components/Games/data"
 
-export default function () {
+export default function App () {
     const [openGame, setOpenGame] = React.useState(false)
     const [currentGame, setCurrentGame] = React.useState(data[0])
 
@@ -21,7 +21,6 @@ export default function () {
     }
     
     return (
-        <>
         <div className="games--body">
             <Modal 
                 openGame={openGame} 
@@ -39,6 +38,5 @@ export default function () {
             <Footer/> 
                        
         </div>
-        </>
     )
 }

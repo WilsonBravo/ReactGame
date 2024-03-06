@@ -1,6 +1,7 @@
 'use client'
 import React from "react"
-import { useId } from "react"
+// import { useId } from "react"
+import {nanoid} from "nanoid"
 import GameCard from "./partials/GameCard"
 import Carousel from "./partials/Carousel"
 
@@ -8,7 +9,7 @@ import '@/styles/Games/style.css'
 
 export default function Main (props) {
     const GameCardElement = props.data.map((gameInfo)=><GameCard 
-        key={useId()}
+        key={nanoid()}
         gameInfo={gameInfo} 
         changeCarousel={props.changeCarousel}
         toggleOpenGame={props.toggleOpenGame}

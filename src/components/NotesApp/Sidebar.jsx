@@ -31,11 +31,32 @@ export default function Sidebar(props) {
         </div>
     ))
 
+    const [windowWidth, setWindowWidth] = React.useState(0);
+
+    React.useEffect(() => {
+        // Verificar si estamos en el lado del cliente antes de acceder a window
+        if (typeof window !== "undefined") {
+          setWindowWidth(window.innerWidth);
+    
+          // También puedes suscribirte a eventos de redimensionamiento si necesitas actualizar el estado cuando cambie el tamaño de la ventana.
+          const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+          };
+    
+          window.addEventListener("resize", handleResize);
+    
+          // Limpia el evento al desmontar el componente
+          return () => {
+            window.removeEventListener("resize", handleResize);
+          };
+        }
+      }, []);
+
     return (
 
         <motion.section layout 
             className="pane sidebar" 
-            style={window.innerWidth < 430 ? { height: props.toggleSideBar ? "auto" : "0" }:{}}
+            style={windowWidth < 430 ? { height: props.toggleSideBar ? "auto" : "0" }:{}}
             // style={props.toggleSideBar?{display:"block"}:{display:"none"}}
             >
             <div className="sidebar--header">

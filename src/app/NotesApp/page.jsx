@@ -7,7 +7,7 @@ const karla = Karla({ subsets: ["latin"] });
 
 import App from "./App"
 
-export default async function Page () {
+export default function Page () {
     return(
         <div className={karla.className}>
             <App/>

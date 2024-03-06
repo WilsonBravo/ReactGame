@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Footer from "@/components/Footer"
 
-export default function () {
+export default function LoadRoot () {
     return (
         <AnimatePresence>
             <div className="load">
