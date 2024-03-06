@@ -159,3 +159,45 @@ button:focus {
     
     transform: scale(1.2);
 }
+
+.open--sidebar--container {
+    display: none;
+}
+
+@media only screen and (max-width: 530px) {
+    .open--sidebar--container {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        padding: 10px;
+    }
+    .open--sidebar {
+        font-size: 30px;
+        color: #4A4E74;
+        z-index: 2;
+    }
+    .split {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar {
+        padding: 0 20px;
+        width: 100%;
+        height: 0;
+        height: auto;
+        position: absolute;
+        z-index: 3;
+        background-color: white;
+        box-shadow: 0 0 5px #4A4E74;
+        /* display: block; */
+        transition: all 0.3s;
+    }
+    .editor {
+        width: 100%;
+        height: calc(100% - 200px);
+    }
+    .mde-preview {
+        height: calc(100% - 200px);
+        overflow: auto;
+    }
+}

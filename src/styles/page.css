@@ -6,14 +6,23 @@
     color: #aeadb3;
 }
 
+.orange {
+    color: #db8534;
+}
+
 .home--header {
     background-color: white;
     padding: 0 0 0 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;    
     transition: all 0.3s;
+}
+
+.header-title {
+    display: flex;
 }
 
 .header-title > * {
@@ -22,6 +31,7 @@
 
 .header--logo {
     height: 30px;
+    font-size: 30px;
     vertical-align: middle;
     margin-right: 10px;
     /* filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.3)); */
@@ -122,8 +132,11 @@
 /* Main ------------------------------------------------- */
 .home--main {
     padding: 80px 40px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
     gap: 40px;
 }
 
@@ -165,7 +178,7 @@
 /* Footer ----------------------------------------------- */
 .home--footer {
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     /* background-color: #aeadb3; */
     background: linear-gradient(#FFFFFF, #D5D4D8);
@@ -194,4 +207,33 @@
 .footer--autor {
     margin-left: auto;
     font-size: 14px;
+}
+
+@media only screen and (max-width: 530px) {
+    .home--header {
+        padding: 20px 0;
+        justify-content: center;
+    }
+    .header-title {
+        gap: 20px;
+    }
+    .home--header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .home--darkmode {
+        display: flex;
+        align-items: center;
+    }
+    .home--footer{
+        gap: 10px;
+    }
+    .footer--icons {
+        font-size: 24px;
+    }
+    .footer--autor {
+        font-size: 12.24px;
+    }
 }

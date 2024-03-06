@@ -1,8 +1,8 @@
 import App from './App'
-import '@/styles/reset.css'
-import '@/styles/Games/page.css'
+// import '@/styles/reset.css'
+import '@/styles/Games/games.css'
 
-export default function Page () {
+export default async function Page () {
     return (
         <>
             <App/>

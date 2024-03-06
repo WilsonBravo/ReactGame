@@ -22,6 +22,7 @@ export default function () {
     
     return (
         <>
+        <div className="games--body">
             <Modal 
                 openGame={openGame} 
                 toggleOpenGame={toggleOpenGame}
@@ -35,7 +36,9 @@ export default function () {
                 currentGame={currentGame}
                 changeCarousel={changeCarousel}
                 />
-            <Footer/>
+            <Footer/> 
+                       
+        </div>
         </>
     )
 }

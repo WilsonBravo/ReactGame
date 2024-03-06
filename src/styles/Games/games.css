@@ -3,13 +3,14 @@
     box-sizing: border-box;
 }
 
-body {
+.games--body {
     background-color: #FFE5CC;
     color: #FFE5CC;
-    position: relative;
+    /* position: relative; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    z-index: -1;
 }
 
 /* Modal ------------------------------------------------- */
@@ -178,11 +179,11 @@ body {
     gap: 40px;
 }
 
-.fa-linkedin {
+.games-linkedin > * {
     color: #0a66c2;
 }
 
-.fa-envelope {
+.games-envelope > * {
     color: #A11312;
 }
 

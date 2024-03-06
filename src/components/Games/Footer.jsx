@@ -9,13 +9,13 @@ export default function Footer () {
             <footer className="games--footer">
                 <ul className="games--footer--list">
                     <a href="https://github.com/WilsonBravo" target="_blank" className="games--list--item">
-                        <FontAwesomeIcon icon={faGithub} ></FontAwesomeIcon>
+                        <FontAwesomeIcon name="games--github" icon={faGithub} ></FontAwesomeIcon>
                     </a>
-                    <a href="https://www.linkedin.com/in/wilson-bravo/" target="_blank" className="games--list--item">
-                        <FontAwesomeIcon icon={faLinkedin} className="fa-linkedin"></FontAwesomeIcon>
+                    <a href="https://www.linkedin.com/in/wilson-bravo/" target="_blank" className="games--list--item games-linkedin">
+                        <FontAwesomeIcon name="games--linkedin" icon={faLinkedin}></FontAwesomeIcon>
                     </a>
-                    <a href="mailto:bravoc.wilson@gmail.com" target="_blank" className="games--list--item">
-                        <FontAwesomeIcon icon={faEnvelope} className="fa-envelope"></FontAwesomeIcon>
+                    <a href="mailto:bravoc.wilson@gmail.com" target="_blank" className="games--list--item games-envelope">
+                        <FontAwesomeIcon name="games-envelope" icon={faEnvelope}></FontAwesomeIcon>
                     </a>
                 </ul>
             </footer>

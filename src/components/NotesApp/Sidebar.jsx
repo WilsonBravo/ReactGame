@@ -1,4 +1,5 @@
 import React from "react"
+import {motion} from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,7 +11,13 @@ export default function Sidebar(props) {
                 className={`title ${
                     note.id === props.currentNote.id ? "selected-note" : ""
                 }`}
-                onClick={() => props.setCurrentNoteId(note.id)}
+                onClick={props.toggleSideBar ? 
+                    () => {
+                        props.setCurrentNoteId(note.id)
+                        props.setToggleSideBar(prevToggleSideBar=>!prevToggleSideBar)
+                    }
+                    :
+                    () => props.setCurrentNoteId(note.id)}
             >
                 <h4 className="text-snippet">{note.body.split(`\n`)[0]}</h4>
                 <FontAwesomeIcon 
@@ -25,12 +32,17 @@ export default function Sidebar(props) {
     ))
 
     return (
-        <section className="pane sidebar">
+
+        <motion.section layout 
+            className="pane sidebar" 
+            style={window.innerWidth < 430 ? { height: props.toggleSideBar ? "auto" : "0" }:{}}
+            // style={props.toggleSideBar?{display:"block"}:{display:"none"}}
+            >
             <div className="sidebar--header">
                 <h3>Notes</h3>
                 <button className="new-note" onClick={props.newNote}>+</button>
             </div>
             {noteElements}
-        </section>
+        </motion.section>
     )
 }

@@ -20,7 +20,7 @@ export default function Main (props) {
             <Carousel gameInfo={props.currentGame}/>
             <div className="game--card--container">
                 {GameCardElement}
-            </div>
+            </div>            
         </main>
     )
 }

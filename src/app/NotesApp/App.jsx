@@ -4,6 +4,8 @@ import Sidebar from "@/components/NotesApp/Sidebar"
 import Editor from "@/components/NotesApp/Editor"
 import Split from "react-split"
 import {nanoid} from "nanoid"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faNoteSticky, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { onSnapshot, addDoc, doc, deleteDoc, setDoc } from "firebase/firestore"
 import { notesCollection, db } from "./firebase"
 
@@ -58,6 +60,8 @@ export default function App() {
     //         return newNotes
     //     })
     // }
+
+    const [toggleSideBar, setToggleSideBar] = React.useState(false)
 
     // Use Firebase -------------------------------------------------
     const [notes, setNotes] = React.useState([])
@@ -129,45 +133,52 @@ export default function App() {
     }
     
     return (
-        <main>
-        {
-            notes.length > 0 
-            ?
-            <Split 
-                sizes={[30, 70]} 
-                direction="horizontal" 
-                className="split"
-            >
-                <Sidebar
-                    // LocalStorage
-                    // notes={notes}
-                    notes={sortedNotes}
-                    deleteNote={deleteNote}
-                    currentNote={currentNote}
-                    setCurrentNoteId={setCurrentNoteId}
-                    newNote={createNewNote}
-                />
-                <Editor 
-                    // LastStorage
-                    // currentNote={currentNote} 
-                    // updateNote={updateNote} 
+        <>
+            <main>
+            {
+                notes.length > 0 
+                ?
+                <div className="split">
+                    <div className="open--sidebar--container">
+                        <FontAwesomeIcon icon={faNoteSticky} className="open--sidebar" onClick={()=>{
+                            setToggleSideBar(prevToggleSideBar=>{
+                                return !prevToggleSideBar})
+                        }}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faCirclePlus} style={{color:"#4A4E74"}}></FontAwesomeIcon>                        
+                    </div>
+                    <Sidebar                        
+                        toggleSideBar={toggleSideBar}
+                        setToggleSideBar={setToggleSideBar}
+                        // LocalStorage
+                        // notes={notes}
+                        notes={sortedNotes}
+                        deleteNote={deleteNote}
+                        currentNote={currentNote}
+                        setCurrentNoteId={setCurrentNoteId}
+                        newNote={createNewNote}
+                    />
+                    <Editor 
+                        // LastStorage
+                        // currentNote={currentNote} 
+                        // updateNote={updateNote} 
 
-                    tempNoteText={tempNoteText}
-                    setTempNoteText={setTempNoteText}
-                />
-            </Split>
-            :
-            <div className="no-notes">
-                <h1>You have no notes</h1>
-                <button 
-                    className="first-note" 
-                    onClick={createNewNote}
-                >
-                    Create one now
-                </button>
-            </div>
-            
-        }
-        </main>
+                        tempNoteText={tempNoteText}
+                        setTempNoteText={setTempNoteText}
+                    />
+                </div>
+                :
+                <div className="no-notes">
+                    <h1>You have no notes</h1>
+                    <button 
+                        className="first-note" 
+                        onClick={createNewNote}
+                    >
+                        Create one now
+                    </button>
+                </div>
+                
+            }
+            </main>
+        </>
     )
 }

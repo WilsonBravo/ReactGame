@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-import '@/styles/reset.css'
-import '@/styles/globals.css'
-import "@/styles/page.css";
-
 import App from "./App";
 
-export default function Home() {
+// async function waitFunction () {
+//   await new Promise((resolve)=>(setTimeout(resolve, 10000)))
+//   return
+// }
+
+export default async function Home() {
   return (
     <>
       <App/>

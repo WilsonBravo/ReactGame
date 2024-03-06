@@ -1,0 +1,51 @@
+/* Bubble.module.css */
+.bubble {
+  cursor: move;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  gap: 20px;
+  background-color: #FFF;
+  color: #181818;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 0 5px #181818;
+  transition: width 0.3s, border-radius 0.3s, justify-content 0.3s;
+}
+
+.handle {
+  cursor: move;
+}
+
+.bubble--bar {
+  cursor: pointer;
+}
+
+.onHover {
+  display: none;
+  gap: 10px;
+}
+
+/* .bubble:hover {
+  width: 200px;
+  border-radius: 10px;
+  justify-content: space-between;
+} */
+
+/* .bubble:hover .onHover {
+  display: flex;
+} */
+
+.nav-icons {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-icons:hover {
+  color: #A11312;
+  transform: scale(1.2);
+}

@@ -2,6 +2,7 @@ import React from "react"
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faPython, faRaspberryPi, faLinux } from "@fortawesome/free-brands-svg-icons";
 
 export default function Header (props) {
@@ -30,9 +31,9 @@ export default function Header (props) {
                 {/* <h1>Here goes Header</h1> */}
             </div>
             <nav>
-                <div class="dropdown">
-                    <button class="dropbtn">Home</button>
-                    <div class="dropdown-content">
+                <div className="dropdown">
+                    <button className="dropbtn">Home</button>
+                    <div className="dropdown-content">
                     <a href="#">About</a>
                     <a href="#">Interests</a>
                     <a href="#">Proyects</a>
@@ -41,13 +42,15 @@ export default function Header (props) {
                 <Link className="home--header--item" href="/Games">Games</Link>
                 <Link className="home--header--item" href="/NotesApp">Notes App</Link>
                 <div className="home--darkmode">
-                    <span className="bold">Ligth</span>
+                    {/* <span className="bold">Ligth</span> */}
+                    <FontAwesomeIcon icon={faSun} className="bold orange"></FontAwesomeIcon>
                     <button className="change--colorbutton" onClick={props.darkModeToggle}>
                         <div style={props.darkMode ? buttonBackground:{}} className="change--colormode">
                             <img style={props.darkMode ? buttonStyle:{}} src={props.darkMode ? "./circle--dark.png":"./circle--light.png"} alt="circle" />
                         </div>
                     </button>
-                    <span className="gray">Dark</span>
+                    {/* <span className="gray">Dark</span> */}
+                    <FontAwesomeIcon icon={faMoon} className="gray"></FontAwesomeIcon>
                 </div>
             </nav>
         </header>

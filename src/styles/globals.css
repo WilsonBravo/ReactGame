@@ -1,21 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     box-sizing: border-box;
 }
 
-/* body {
-    background: #282D35;
-} */
+body {
+    margin: 0;
+    padding: 0;
+}
 
-#opacity {
+#home-opacity {
     /* height: 100vh; */
     background-image: url('/neural_network.bin');
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
     opacity: 0.1;
     z-index: -1;
+}
+
+.load {
+    width: 100vw;
+
+}
+
+.load--container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.load--description {
+    font-size: 30px;
+}
+
+.load--dot {
+    font-size: 30px;
+    display: inline-flex;
+}
+
+@media only screen and (max-width: 530px) {
+    .load--description {
+        font-size: 20px;
+    }
+
+    .load--container {
+        margin-top: 50%;
+        justify-content:flex-start;
+        height: 100%;
+    }
 }
