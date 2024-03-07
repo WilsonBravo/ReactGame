@@ -14,7 +14,7 @@ export default function App () {
     const style={
         background: "#282D35",
         position: "absolute",
-        width:"100vw",
+        width:"100%",
         zIndex:"-1",
         color: "white"
     }

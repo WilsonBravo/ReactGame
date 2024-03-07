@@ -134,15 +134,19 @@
     padding: 80px 40px;
     margin-bottom: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     overflow: auto;
     gap: 40px;
 }
 
-/* .main--text {
-    margin-top: 20px;
-} */
+.home--section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
 .main--text h1 {
     font-size: 40px;
@@ -173,6 +177,122 @@
     height: 238px;
     border-radius: 15px 50px 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.home--article {
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home--article h1 {
+    color: #6a6a6d;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 15px;
+    border-bottom: 5px solid #db8534;
+}
+
+.home--article .about--title {
+    margin-bottom: 40px;
+}
+
+.home--carousel--card {
+    display: flex;
+}
+
+.home--carousel--card p {
+    margin-left: 380px;
+    /* padding-left: 240px; */
+
+    border-left: 5px solid #db8534;
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+}
+
+.home--carousel {
+    display: flex;
+    align-items: center;
+}
+
+.carousel--item {
+    position: absolute;
+}
+
+/* .proyect--card {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+} */
+
+.proyect--card--container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    /* padding-bottom: 60px; */
+}
+.proyect--card--title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.proyect--card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.proyect--card h3 {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: 500;
+    color: #db8534;
+}
+
+.proyect--card p {
+    margin-top: 15px;
+    border-left: 5px solid #db8534;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+    /* text-align: justify; */
+}
+
+.proyect--card--img {
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.proyect--card--icons--container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.proyect--card--icons {
+    font-size: 36px;
+}
+
+.python {
+    color: rgb(42, 133, 156);
+}
+
+.raspberry {
+    color: red;
 }
 
 /* Footer ----------------------------------------------- */
@@ -226,6 +346,39 @@
     .home--darkmode {
         display: flex;
         align-items: center;
+    }
+    .home--main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main--text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .home--section {
+        align-items: center;
+        justify-content: center;
+    }
+    .home--article {
+        width: 100vw;
+    }
+    .home--carousel {
+        position: relative;
+        height: 270px;
+    }
+    .carousel--item {
+        height: 270px;
+    }
+    .home--carousel--card p {
+        margin: 0;
+        padding: 0;
+        margin-top: 290px;
+        max-width: 100%;
+        border-left: none;
+    }
+    .proyect--card--container {
+        flex-wrap: wrap;
     }
     .home--footer{
         gap: 10px;

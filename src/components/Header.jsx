@@ -34,9 +34,9 @@ export default function Header (props) {
                 <div className="dropdown">
                     <button className="dropbtn">Home</button>
                     <div className="dropdown-content">
-                    <a href="#">About</a>
-                    <a href="#">Interests</a>
-                    <a href="#">Proyects</a>
+                    <a href="#About">About</a>
+                    {/* <a href="#">Interests</a> */}
+                    <a href="#Proyects">Proyects</a>
                     </div>
                 </div> 
                 <Link className="home--header--item" href="/Games">Games</Link>
