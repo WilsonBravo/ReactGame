@@ -1,8 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLink, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faPython, faLinux, faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
 
 export default function ProyectCard ({ item }) {
+
+    const faIconsElements = item.icons.map((icon)=> <FontAwesomeIcon 
+        key={icon.title}
+        icon={icon.icon} 
+        title={icon.title}
+        className={icon.class?"proyect--card--icons "+icon.class:"proyect--card--icons"
+    }></FontAwesomeIcon>)
+
+    const IconsElements = item.imgIcons.map((imgIcon)=><img 
+            key={imgIcon.title}
+            title={imgIcon.title} 
+            src={imgIcon.img} 
+            width="36px" 
+            height="36px" 
+            alt={imgIcon.title} 
+        />)
+
     return (
         <div className="proyect--card">
             <div className="proyect--card--title">
@@ -21,13 +38,17 @@ export default function ProyectCard ({ item }) {
                     <p>{item.description}</p>
 
                     <div className="proyect--card--icons--container">
-                        <FontAwesomeIcon title="Python" icon={faPython} className="proyect--card--icons python"></FontAwesomeIcon>
-                        <FontAwesomeIcon title="Linux" icon={faLinux} className="proyect--card--icons"></FontAwesomeIcon>
-                        <FontAwesomeIcon title="Raspberry Pi" icon={faRaspberryPi} className="proyect--card--icons raspberry"></FontAwesomeIcon>
-                        <img title="MySQL" src="/icons/mysql.png" width="40px" height="40px" alt="MySQL" />
-                        <img title="Grafana" src="/icons/grafana.png" width="36px" height="36px" alt="Grafana" />
-                        <img title="InfluxDB" src="/icons/influxDB.png" width="36px" height="36px" alt="InfluxDB" />
-                        <FontAwesomeIcon icon={faExternalLink } className="proyect--card--icons"></FontAwesomeIcon>
+                        
+                        {faIconsElements}
+                        {IconsElements}
+
+                        {item.url && <a href={item.url} target="_blank">
+                            <FontAwesomeIcon icon={faExternalLink } className="link"></FontAwesomeIcon>
+                        </a>}
+                        {item.fileUrl && <a href={item.fileUrl} target="_blank">
+                            <FontAwesomeIcon icon={faFile } className="link"></FontAwesomeIcon>
+                        </a>}
+
                     </div>
 
                 </div>

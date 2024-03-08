@@ -222,6 +222,8 @@
 
 .carousel--item {
     position: absolute;
+    border-radius: 15px 50px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /* .proyect--card {
@@ -273,8 +275,12 @@
 }
 
 .proyect--card--img {
+    min-width: 300px;
+    min-height: 300px;
     object-fit: cover;
     vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .proyect--card--icons--container {
@@ -283,8 +289,17 @@
     align-items: center;
 }
 
+.proyect--card--icons--container img {
+    object-fit: cover;
+}
+
 .proyect--card--icons {
     font-size: 36px;
+}
+
+.link {
+    cursor: pointer;
+    color: #4A4E74;
 }
 
 .python {
@@ -293,6 +308,10 @@
 
 .raspberry {
     color: red;
+}
+
+.react {
+    color: #61dbfb;
 }
 
 /* Footer ----------------------------------------------- */
